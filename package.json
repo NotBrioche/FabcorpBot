@@ -1,0 +1,22 @@
+{
+  "name": "fabcorpbot",
+  "version": "0.1.0",
+  "description": "Discord Bot for Fabcorp",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node dist/index.js"
+  },
+  "author": "NotBrioche",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.27.0",
+    "dotenv": "^18.0.5",
+    "sqlite3": "^6.0.1",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "jest": "^30.5.2"
+  }
+}
