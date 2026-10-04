@@ -23,7 +23,7 @@ client.on(
 
     if (
       oldState.channelId != newState.channelId &&
-      oldState.channel?.members.size! < 1
+      oldState.channel?.members.size === 0
     ) {
       if (
         oldState.channel?.type == ChannelType.GuildVoice &&
