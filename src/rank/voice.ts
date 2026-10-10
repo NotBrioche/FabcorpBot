@@ -64,13 +64,6 @@ async function addXP() {
   }
 }
 
-export async function getTotalVoiceHours(): Promise<number> {
-  const res = await db.query(
-    `SELECT COALESCE(SUM(minutes) / 60, 0)::int AS hours FROM voice_time`
-  );
-  return res.rows[0].hours as number;
-}
-
 async function checkLevel(minutes: number, member: GuildMember) {
   if (minutes < 180) {
     return;
@@ -96,18 +89,5 @@ async function checkLevel(minutes: number, member: GuildMember) {
 CronJob.from({
   cronTime: "* * * * *",
   onTick: addXP,
-  start: true
-});
-
-CronJob.from({
-  cronTime: "0 * * * *",
-  onTick: async function () {
-    const guild = client.guilds.cache.get("1220475445569523742");
-
-    const statChannel = guild?.channels.cache.get("1558554606177615994");
-    const hours = await getTotalVoiceHours();
-
-    statChannel?.setName("H en vocal : " + hours);
-  },
   start: true
 });
