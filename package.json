@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "tsc && tsx src/index.ts",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "author": "NotBrioche",
   "license": "ISC",
@@ -26,6 +29,7 @@
     "nodemon": "^3.1.14",
     "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.0"
+    "typescript-eslint": "^8.71.0",
+    "vitest": "^5.0.3"
   }
 }
